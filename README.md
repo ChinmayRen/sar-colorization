@@ -35,6 +35,12 @@ The generator follows a U-Net architecture:
 - **Output**: 256x256x3 (RGB image)
 - Skip connections between encoder and decoder layers
 
+- What the U-Net architecture does is:
+  - It's design allows for "skips" or connections between the downsampling & upsampling layers,
+  which allows the model to retain many low-level features such as colors or textures(extremely important for the purpose of our model)
+  - It also allows for retention of high level features since the image shall not lose those features while undergoing the process of colorization.
+  - And ultimately, it allows the generator to learn the mapping from grayscale (or L channel) to the colorized image (RGB)
+
 ### Discriminator
 
 The discriminator follows a PatchGAN architecture:
@@ -44,6 +50,12 @@ The discriminator follows a PatchGAN architecture:
   - 3 downsampling layers (64, 128, 256 filters)
   - 2 convolutional layers (512, 1 filters)
 - **Output**: 30x30x1 patch, determining if each 70x70 patch of the input is real or fake
+
+- What PatchGAN essentially does is:
+
+Instead of looking at the whole image at once, PatchGAN looks at small patches of the image.
+It decides if each patch looks real or fake.
+This helps the model focus on getting the small details right, not just the overall image.
 
 ### Loss Functions
 
