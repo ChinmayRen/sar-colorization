@@ -3,7 +3,7 @@ This project focuses on colorizing Synthetic Aperture Radar (SAR) images to enha
 
 The model uses a pix2pix architecture, which is a type of Conditional Generative Adversarial Network (cGAN). The pix2pix model is designed for image-to-image translation tasks, making it suitable for transforming grayscale SAR images into their colored counterparts.
 
-## PREPROCESSING:
+## Pre - Processing:
 We found that the given black & white images were very noisy (unlike high resolution images usually obtained from SAR imaging)
 
 Therefore,
