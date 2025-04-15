@@ -1,1 +1,4 @@
 tensorflow>=2.18.0
+cv2
+matplotlib
+PIL
